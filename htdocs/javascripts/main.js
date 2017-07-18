@@ -1,29 +1,61 @@
 $(function(){
 
-$.fn.isInViewport = function() {
+$.fn.isInViewport = function(toleranceTop = 0, toleranceBottom = 0, toleranceLeft = 0, toleranceRight = 0){
 
-	var win = $(window);
+    var win = $(window);
 
-	var viewport = {
-		top : win.scrollTop(),
-		left : win.scrollLeft()
-	};
-	viewport.right = viewport.left + win.width();
-	viewport.bottom = viewport.top + win.height();
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + toleranceRight + win.width();
+    viewport.bottom = viewport.top + toleranceBottom + win.height();
 
-	var bounds = this.offset();
-	bounds.right = bounds.left + this.outerWidth();
-	bounds.bottom = bounds.top + this.outerHeight();
+    var bounds = this.offset();
+    bounds.right = bounds.left + toleranceLeft + this.outerWidth();
+    bounds.bottom = bounds.top + toleranceTop + this.outerHeight();
 
-	return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
+
+var responsive = {
+	init: function() {
+		var win = $(window);
+		var body = $('body');
+		var viewportWidth = win.outerWidth();
+		window.device = 'desktop';
+	
+		win.resize(function(){
+			var viewportWidth = win.outerWidth();
+		
+			switch(true) {
+				case (viewportWidth <= 600):
+					window.device = 'phone';
+					body.attr('data-device', 'phone');
+				break;
+
+				case (viewportWidth > 600 && viewportWidth <= 1024):
+					window.device = 'tablet';
+					body.attr('data-device', 'tablet');
+				break;
+
+				default:
+					window.device = 'desktop';
+					body.attr('data-device', 'desktop');
+			}
+		});
+		body.resize();
+	}
+};
+responsive.init();
 
 
 var carousel = {
 	init: function() {
 		var carousel = $('.carousel');
+
 		carousel.slick({
+			lazyLoad: 		'ondemand',
 			dots: 			true,
 			infinite: 		true,
 			speed: 			300,
@@ -44,44 +76,70 @@ var carousel = {
 carousel.init();
 
 
-var lazyFadeIn = {
+var viewportFadeIn = {
 	init: function() {
-		var duration = 500;
-		var fadeInDuration = 500;
-		$('.page section').each(function(index, element){
+		var win = $(window);
+		var body = $('body');
+
+		$('.page section.content').each(function(index, element){
 			var e = $(element);
-			e.css('opacity', 0);
-			window.lazyFadeInTimeout = window.setTimeout(function(){
-				e.stop(true).animate({
-					opacity: 1
-				}, fadeInDuration);
-			}, duration);
-			duration = duration + duration/2;
-		});
-	}
-};
-lazyFadeIn.init();
-
-
-var contentSectionControl = {
-	sections: $('.page section.content'),
-	lazyFadeIn: function() {
-		$(window).scroll(() => {
-			window.clearTimeout(window.lazyFadeInTimeout);
-			this.sections.each((index, element) => {
-				var e = $(element);
+			win.scroll(function(){
 				if(e.isInViewport()) {
-					e.stop(true).animate({
-						opacity: 1
-					}, 500);
+					e.addClass('in-view');
 				} else {
-					e.css('opacity', 0.1);
+					e.removeClass('in-view');
 				}
 			});
 		});
+		body.scroll();
 	}
 };
-contentSectionControl.lazyFadeIn();
+viewportFadeIn.init();
+
+
+var mainNav = {
+	nav: $('nav#main'),
+	navList: $('nav#main').find('ul').first(),
+
+	sticky: () => {
+		var nav = mainNav.nav;
+		var win = $(window);
+		var isSticky = false;
+		var toleranceTop = nav.outerHeight() * (-1);
+
+		win.scroll(function(){
+			var navNextElement = nav.next();
+			var navNextElementBounds = navNextElement.offset();
+			var navInitPosTop = navNextElementBounds.top + toleranceTop;
+
+			if (nav.isInViewport(toleranceTop) && !isSticky) {
+				nav.removeClass('sticky');
+			} else if (win.scrollTop() <= navInitPosTop) {
+				nav.removeClass('sticky');
+				isSticky = false;
+			} else {
+				nav.addClass('sticky');
+				isSticky = true;
+			}
+		});
+	},
+
+	phone: () => {
+		var win = $(window);
+		var iconMenu = mainNav.nav.find('div.icon-menu');
+		var navMenuSlideDuaration = 300;
+
+		iconMenu.on('click.icon-menu',function(){
+			mainNav.navList.slideToggle(navMenuSlideDuaration);
+		});
+
+		win.resize(function(){
+			(window.device !== 'phone') ? mainNav.navList.removeAttr('style') : false;
+		});
+	},
+}
+mainNav.sticky();
+mainNav.phone();
 
 
 });

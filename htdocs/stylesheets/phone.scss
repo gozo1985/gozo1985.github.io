@@ -1,0 +1,35 @@
+@import 'modules/_all.scss';
+
+body {
+	font: $phone-font;
+}
+
+section.content {
+	padding: 6%;
+}
+
+nav#main {
+
+	ul {
+		display: none;
+
+		li {
+			width: 100%;
+			text-align: center;
+			padding: 5px 0px;
+
+			a {
+				font-size: 2em;
+			}
+		}
+	}
+
+	div.icon {
+		display: block;
+		color: #FFF;
+		text-align: center;
+		font-size: 2.5em;
+		padding: 10px 0px;
+		cursor: pointer;
+	}
+}

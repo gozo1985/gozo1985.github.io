@@ -1,0 +1,23 @@
+body {
+  font: 0.8em/1.4 Verdana; }
+
+section.content {
+  padding: 6%; }
+
+nav#main ul {
+  display: none; }
+  nav#main ul li {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0px; }
+    nav#main ul li a {
+      font-size: 2em; }
+nav#main div.icon {
+  display: block;
+  color: #FFF;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 10px 0px;
+  cursor: pointer; }
+
+/*# sourceMappingURL=phone.css.map */

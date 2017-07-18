@@ -1,17 +1,73 @@
-html, body {
+html, body, ul, ol {
   margin: 0;
   padding: 0; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?vackk7");
+  src: url("../fonts/icomoon.eot?vackk7#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?vackk7") format("truetype"), url("../fonts/icomoon.woff?vackk7") format("woff"), url("../fonts/icomoon.svg?vackk7#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-menu:before {
+  content: "\e9bd"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
+
+.icon-circle-up:before {
+  content: "\ea41"; }
+
 html, body {
+  font: 1em/1.5 Verdana;
   background-color: #BBB; }
 
 #page {
   max-width: 1920px;
   margin: 0 auto; }
 
+a#disrupter {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 10px 5px #CCC;
+  background-color: #AAA;
+  color: #000;
+  font-weight: bold; }
+  a#disrupter:hover {
+    box-shadow: 0px 0px 10px 10px #EEE; }
+  a#disrupter span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    text-align: center; }
+
 section.carousel {
   margin: 0 auto;
   background-color: #DDD; }
+  section.carousel.slick-dotted.slick-slider {
+    margin-bottom: 0; }
   section.carousel .slick-prev {
     left: 1%;
     z-index: 1; }
@@ -24,13 +80,16 @@ section.carousel {
     position: relative;
     min-height: 300px;
     margin-bottom: 36px; }
+    section.carousel .item.item-bg {
+      background-repeat: repeat;
+      background-size: contain;
+      background-position: center; }
     section.carousel .item .content-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80%;
-      font: 1em/1.4 Verdana; }
+      width: 80%; }
     section.carousel .item .content-video {
       position: relative;
       padding-bottom: 36.25%; }
@@ -44,18 +103,48 @@ section.carousel {
     section.carousel .item .content > picture img {
       width: 100%; }
 
+nav#main {
+  background-color: #333; }
+  nav#main ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0; }
+    nav#main ul li {
+      display: inline-block;
+      padding: 5px 15px; }
+      nav#main ul li a {
+        display: block;
+        padding: inherit;
+        color: #FFF;
+        text-decoration: none; }
+        nav#main ul li a:hover {
+          text-decoration: underline; }
+  nav#main div.icon {
+    display: none; }
+  nav#main.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; }
+
 section.content {
-  padding: 2%; }
+  padding: 2%;
+  opacity: 0; }
   section.content:nth-child(even) {
     background-color: #BBB; }
   section.content:nth-child(odd) {
     background-color: #B5B5B5; }
+  section.content.in-view {
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out; }
   section.content h2 {
     text-align: center;
-    font: 1em Verdana;
     font-size: 2em; }
-  section.content p {
-    font: 1em Verdana; }
   section.content picture img {
     max-width: 100%;
     display: block;

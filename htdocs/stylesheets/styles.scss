@@ -1,0 +1,163 @@
+@import 'modules/_all.scss';
+@import 'partials/_reset.scss';
+@import 'vendor/_iconfont.scss';
+
+html, body {
+	font: $base-font;
+	background-color: $page-bg-color;
+}
+
+#page {
+	max-width: $page-max-width;
+	margin: 0 auto;
+}
+
+a#disrupter {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 10%;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0px 0px 10px 5px #CCC;
+	background-color: $disrupter-bg-color;
+	color: #000;
+	font-weight: bold;
+
+	&:hover {
+		box-shadow: 0px 0px 10px 10px #EEE;
+	}
+
+	span {
+		@include center;
+		width: 50%;
+		height: 50%;
+		text-align: center;
+	}
+}
+
+section.carousel {
+	margin: 0 auto;
+	background-color: $carousel-bg-color;
+
+	&.slick-dotted.slick-slider {
+		margin-bottom: 0;
+	}
+	
+	.slick-prev {
+		left: 1%;
+		z-index: 1;
+	}
+	.slick-next {
+		right: 1%;
+		z-index: 1;
+	}
+	.slick-dots {
+		bottom: 1%;
+	}
+
+	.item {
+		position: relative;
+		min-height: 300px;
+		margin-bottom: 36px;
+
+		&.item-bg {
+			background-repeat:repeat;
+			background-size:contain;
+			background-position:center;
+		}
+			
+		.content-text {
+			@include center;
+			width: 80%;
+		}
+		.content-video {
+			position: relative;
+			padding-bottom: 36.25%;
+			
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				min-height: 300px;
+			}
+		}
+		.content {
+			
+			> picture img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+nav#main {
+	background-color: $nav-bg-color;
+
+	ul {
+		@include flex('center');
+		list-style-type: none;
+		padding: 10px 0;
+
+		li {
+			display: inline-block;
+			padding: 5px 15px;
+
+			a {
+				display: block;
+				padding: inherit;
+				color: $nav-font-color;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	div.icon {
+		display: none;
+	}
+
+	&.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}
+
+section.content {
+	padding: 2%;
+	opacity: 0;
+
+	&:nth-child(even) {
+		background-color: $section-color-even;
+	}
+	&:nth-child(odd) {
+		background-color: $section-color-odd;
+	}
+
+	&.in-view {
+		@include fadeTo(1, 0.7s);
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2em;
+	}
+
+	p {}
+
+	picture img {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
+}

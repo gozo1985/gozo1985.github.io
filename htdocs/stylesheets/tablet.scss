@@ -1,0 +1,18 @@
+@import 'modules/_all.scss';
+
+body {
+	font: $tablet-font;
+}
+
+section.content {
+	padding: 4%;
+}
+
+nav#main {
+
+	ul {
+		li {
+			padding: 5px 10px;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+@mixin flex($option:false) {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	@if $option == 'center' {
+    	justify-content: center;
+	}
+}
+
+@mixin center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin fadeTo($opacity:'1' , $duration:'1s') {
+	opacity: $opacity;
+	transition: opacity $duration ease-in-out;
+}

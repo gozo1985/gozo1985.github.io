@@ -1,11 +1,13 @@
 $page-max-width: 1920px;
 
 $page-bg-color: #BBB;
+$disrupter-bg-color: #AAA;
 $carousel-bg-color: #DDD;
+$nav-bg-color: #333;
+$nav-font-color: #FFF;
 $section-color-even: #BBB;
 $section-color-odd: #B5B5B5;
 
-$base-font-size: 1.5em;
-$base-font-line-height: 1.5;
-$base-font-family: Verdana;
-$base-font: $base-font-size/$base-font-line-height $base-font-family;
+$base-font: 1em/1.5 Verdana;
+$tablet-font: .9em/1.4 Verdana;
+$phone-font: .8em/1.4 Verdana;

@@ -14,14 +14,15 @@ include_once('phpscripts/mobile_detection.php');
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width: 600px)" href="stylesheets/phone.css"/>
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 600px) and (max-width: 800px)" href="stylesheets/tablet.css"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 1024px)" href="stylesheets/tablet.css"/>
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="stylesheets/phone.css"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="page">
+		<a id="disrupter" href="#"><span>Klick<br/>mich!</span></a>
 		<section class="carousel">
 			<div class="item"><div class="content content-video">
 				<iframe width="800" height="400" src="https://www.youtube.com/embed/gJeh_dLjPN4?autoplay=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
@@ -39,7 +40,7 @@ include_once('phpscripts/mobile_detection.php');
 					<img src="http://placehold.it/1920x550" alt="Placeholder" />
 				</picture>
 			</div></div>
-			<div class="item"><div class="content content-text">
+			<div class="item item-bg" style="background-image: url('images/pattern.png');"><div class="content content-text">
 				<h1>Hello World!</h1>
 				<span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
 				 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
@@ -76,6 +77,17 @@ include_once('phpscripts/mobile_detection.php');
 				</picture>
 			</div></div>
 		</section>
+		<nav id="main">
+			<div class="icon icon-menu"></div>
+			<ul>
+				<li><a href="#">Nav Link 1</a></li>
+				<li><a href="#">Nav Link 2 a bit longer</a></li>
+				<li><a href="#">Nav Link 3</a></li>
+				<li><a href="#">Nav Link 4</a></li>
+				<li><a href="#">Nav Link 5 longer</a></li>
+				<li><a href="#">Nav Link 6</a></li>
+			</ul>
+		</nav>
 		<section class="content content-1">
 			<h2>Headline</h2>
 			<picture>
@@ -187,8 +199,8 @@ include_once('phpscripts/mobile_detection.php');
 	</div>
 
 	<script type="text/javascript" src="javascripts/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="javascripts/main.js"></script>
 	<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 
 </html> 
