@@ -16,6 +16,15 @@
 	transform: translate(-50%, -50%);
 }
 
+@mixin normalize() {
+	position: static;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	transform: none;
+}
+
 @mixin fadeTo($opacity:'1' , $duration:'1s') {
 	opacity: $opacity;
 	transition: opacity $duration ease-in-out;

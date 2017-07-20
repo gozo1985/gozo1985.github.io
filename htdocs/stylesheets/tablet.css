@@ -7,4 +7,41 @@ section.content {
 nav#main ul li {
   padding: 5px 10px; }
 
+section.contactform form {
+  width: 90%; }
+  section.contactform form > div {
+    position: static;
+    overflow: visible; }
+    section.contactform form > div.checkbox-row {
+      overflow: hidden; }
+  section.contactform form label {
+    float: none;
+    width: 100%; }
+    section.contactform form label[for="contact-form-terms"] {
+      float: left;
+      width: auto; }
+  section.contactform form input {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    box-sizing: border-box; }
+    section.contactform form input#contact-form-terms {
+      float: left;
+      width: auto;
+      top: 8px;
+      left: 5px; }
+  section.contactform form .pretty-checkbox-wrapper {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    float: left;
+    margin-left: 10px; }
+
 /*# sourceMappingURL=tablet.css.map */

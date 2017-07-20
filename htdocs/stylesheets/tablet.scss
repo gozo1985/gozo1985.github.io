@@ -16,3 +16,48 @@ nav#main {
 		}
 	}
 }
+
+section.contactform {
+
+	form {
+		width: 90%;
+
+		> div {
+			position: static;
+			overflow: visible;
+
+			&.checkbox-row {
+				overflow: hidden;
+			}
+		}
+
+		label {
+			float: none;
+			width: 100%;
+
+			&[for="contact-form-terms"] {
+				float: left;
+				width: auto;
+			}
+		}
+
+		input {
+			@include normalize();
+			width: 100%;
+			box-sizing: border-box;
+
+			&#contact-form-terms {
+				float: left;
+				width: auto;
+				top: 8px;
+				left: 5px;
+			}
+		}
+
+		.pretty-checkbox-wrapper {
+			@include normalize();
+			float: left;
+			margin-left: 10px;
+		}
+	}
+}

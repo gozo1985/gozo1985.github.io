@@ -1,5 +1,7 @@
 @import 'modules/_all.scss';
 @import 'partials/_reset.scss';
+@import 'partials/_grids.scss';
+@import 'partials/_forms.scss';
 @import 'vendor/_iconfont.scss';
 
 html, body {
@@ -37,6 +39,10 @@ a#disrupter {
 		height: 50%;
 		text-align: center;
 	}
+}
+
+section {
+	clear: left;
 }
 
 section.carousel {
@@ -159,5 +165,39 @@ section.content {
 		max-width: 100%;
 		display: block;
 		margin: 0 auto;
+	}
+}
+
+section.contactform {
+
+	form {
+		width: 80%;
+		margin: 0 auto;
+
+		> div {
+			position: relative;
+			margin-bottom: 30px;
+
+			&.submit {
+				text-align: center;
+			}
+		}
+
+		input {
+			@include center();
+			width: 55%;
+
+			&[type="submit"] {
+				float: none;
+				width: auto;
+				clear: both;
+			}
+		}
+
+		.pretty-checkbox-wrapper {
+			@include center();
+			width: 56.5%;
+		}
+
 	}
 }

@@ -1,0 +1,28 @@
+.grid_50_50 {
+	overflow: hidden;
+
+	.grid {
+		width: 47.5%;
+		float: left;
+
+		&:nth-child(odd) {
+			padding-right: 2.5%;
+			@media screen and (max-width: $break-tablet) {
+				padding-right: 0;
+			}
+		}
+
+		&:nth-child(even) {
+			padding-left: 2.5%;
+			@media screen and (max-width: $break-tablet) {
+				padding-left: 0;
+				padding-top: 2%;
+			}
+		}
+
+		@media screen and (max-width: $break-tablet) {
+			width: 100%;
+			float: none;
+		}
+	}
+}

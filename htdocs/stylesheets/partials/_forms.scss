@@ -1,0 +1,66 @@
+form {
+
+	input {
+
+		&[type="text"], &[type="email"], &[type="password"] {
+			padding: 10px;
+			border: 2px solid $input-border-color;
+			background-color: $input-bg-color;
+			color: $input-font-color;
+			font-size: 1.3em;
+		}
+
+		&[type="submit"] {
+			border: 2px solid #000;
+			background-color: $button-bg-color;
+			color: $button-font-color;
+			padding: 10px;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+	}
+
+	.pretty-checkbox {
+		width: 16px;
+		height: 16px;
+		position: relative;
+		border: 2px solid $input-border-color;
+		background: $input-bg-color;
+		background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+		
+			label {
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				cursor: pointer;
+				background: linear-gradient(top, #222 0%, #45484d 100%);
+				
+				&:after {
+					content: '';
+					width: 14px;
+					height: 14px;
+					position: absolute;
+					top: 1px;
+					left: 1px;
+					background: $input-font-color;
+					background: linear-gradient(top, $input-font-color 0%, #FFF 100%);
+					opacity: 0;
+				}
+				
+				&:hover::after {
+					opacity: 0.3;
+				}
+		}
+
+		input[type=checkbox] {
+			visibility: hidden;
+			
+			&:checked + label:after {
+				opacity: 1;
+			}
+		} 
+	}
+}

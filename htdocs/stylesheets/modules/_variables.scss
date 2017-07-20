@@ -1,5 +1,8 @@
 $page-max-width: 1920px;
 
+$break-tablet: 1024px;
+$break-phone: 600px;
+
 $page-bg-color: #BBB;
 $disrupter-bg-color: #AAA;
 $carousel-bg-color: #DDD;
@@ -7,6 +10,12 @@ $nav-bg-color: #333;
 $nav-font-color: #FFF;
 $section-color-even: #BBB;
 $section-color-odd: #B5B5B5;
+
+$input-bg-color: #CCC;
+$input-border-color: #000;
+$input-font-color: #222;
+$button-bg-color: #555;
+$button-font-color: #FFF;
 
 $base-font: 1em/1.5 Verdana;
 $tablet-font: .9em/1.4 Verdana;

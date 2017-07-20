@@ -2,6 +2,73 @@ html, body, ul, ol {
   margin: 0;
   padding: 0; }
 
+.grid_50_50 {
+  overflow: hidden; }
+  .grid_50_50 .grid {
+    width: 47.5%;
+    float: left; }
+    .grid_50_50 .grid:nth-child(odd) {
+      padding-right: 2.5%; }
+      @media screen and (max-width: 1024px) {
+        .grid_50_50 .grid:nth-child(odd) {
+          padding-right: 0; } }
+    .grid_50_50 .grid:nth-child(even) {
+      padding-left: 2.5%; }
+      @media screen and (max-width: 1024px) {
+        .grid_50_50 .grid:nth-child(even) {
+          padding-left: 0;
+          padding-top: 2%; } }
+    @media screen and (max-width: 1024px) {
+      .grid_50_50 .grid {
+        width: 100%;
+        float: none; } }
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+  padding: 10px;
+  border: 2px solid #000;
+  background-color: #CCC;
+  color: #222;
+  font-size: 1.3em; }
+form input[type="submit"] {
+  border: 2px solid #000;
+  background-color: #555;
+  color: #FFF;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5em; }
+form .pretty-checkbox {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  border: 2px solid #000;
+  background: #CCC;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); }
+  form .pretty-checkbox label {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    background: linear-gradient(top, #222 0%, #45484d 100%); }
+    form .pretty-checkbox label:after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      background: #222;
+      background: linear-gradient(top, #222 0%, #FFF 100%);
+      opacity: 0; }
+    form .pretty-checkbox label:hover::after {
+      opacity: 0.3; }
+  form .pretty-checkbox input[type=checkbox] {
+    visibility: hidden; }
+    form .pretty-checkbox input[type=checkbox]:checked + label:after {
+      opacity: 1; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?vackk7");
@@ -62,6 +129,9 @@ a#disrupter {
     width: 50%;
     height: 50%;
     text-align: center; }
+
+section {
+  clear: left; }
 
 section.carousel {
   margin: 0 auto;
@@ -149,5 +219,30 @@ section.content {
     max-width: 100%;
     display: block;
     margin: 0 auto; }
+
+section.contactform form {
+  width: 80%;
+  margin: 0 auto; }
+  section.contactform form > div {
+    position: relative;
+    margin-bottom: 30px; }
+    section.contactform form > div.submit {
+      text-align: center; }
+  section.contactform form input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%; }
+    section.contactform form input[type="submit"] {
+      float: none;
+      width: auto;
+      clear: both; }
+  section.contactform form .pretty-checkbox-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56.5%; }
 
 /*# sourceMappingURL=styles.css.map */

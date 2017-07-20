@@ -20,4 +20,7 @@ nav#main div.icon {
   padding: 10px 0px;
   cursor: pointer; }
 
+section.contactform form {
+  width: 100%; }
+
 /*# sourceMappingURL=phone.css.map */
