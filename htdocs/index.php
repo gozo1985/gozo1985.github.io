@@ -218,7 +218,7 @@ include_once('phpscripts/mobile_detection.php');
 		</section>
 		<section class="content contactform">
 			<h2>Headline</h2>
-			<form id="contact-form" action="index.php" method="post">
+			<form id="contact-form" name="contact-form" action="index.php" method="post">
 				<div>
 					<label for="contact-form-firstname">Firstname:</label>
 					<input id="contact-form-firstname" type="text" name="firstname" placeholder="Firstname" required="required" />

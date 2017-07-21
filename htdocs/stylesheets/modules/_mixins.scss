@@ -18,6 +18,7 @@
 
 @mixin normalize() {
 	position: static;
+	float: none;
 	top: auto;
 	left: auto;
 	right: auto;

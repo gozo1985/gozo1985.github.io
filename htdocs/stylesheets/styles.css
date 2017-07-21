@@ -222,7 +222,8 @@ section.content {
 
 section.contactform form {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
   section.contactform form > div {
     position: relative;
     margin-bottom: 30px; }

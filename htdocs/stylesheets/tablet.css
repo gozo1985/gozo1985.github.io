@@ -22,6 +22,7 @@ section.contactform form {
       width: auto; }
   section.contactform form input {
     position: static;
+    float: none;
     top: auto;
     left: auto;
     right: auto;
@@ -36,6 +37,7 @@ section.contactform form {
       left: 5px; }
   section.contactform form .pretty-checkbox-wrapper {
     position: static;
+    float: none;
     top: auto;
     left: auto;
     right: auto;
