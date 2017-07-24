@@ -2,8 +2,8 @@
 
 include_once('phpscripts/mobile_detection.php');
 
-?><!DOCTYPE html>
-<html>
+?><!doctype html>
+<html lang="en">
 
 <head>
 
@@ -11,12 +11,15 @@ include_once('phpscripts/mobile_detection.php');
 		GG DEV
 	</title>
 
+	<link rel="amphtml" href="amp.html">
+
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 	<link rel="stylesheet" type="text/css" media="screen and (max-width: 1024px)" href="stylesheets/tablet.css"/>
 	<link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="stylesheets/phone.css"/>
 
+	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
