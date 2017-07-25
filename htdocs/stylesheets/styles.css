@@ -112,15 +112,19 @@ a#disrupter {
   right: 10%;
   z-index: 1;
   width: 100px;
-  height: 100px;
+  height: 80px;
+  transition: height 0.25s ease;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0px 0px 10px 5px #CCC;
   background-color: #AAA;
   color: #000;
-  font-weight: bold; }
+  font-weight: bold;
+  cursor: pointer; }
   a#disrupter:hover {
-    box-shadow: 0px 0px 10px 10px #EEE; }
+    box-shadow: 0px 0px 10px 10px #EEE;
+    height: 100px;
+    transition: height 0.25s ease; }
   a#disrupter span {
     position: absolute;
     top: 50%;
@@ -211,7 +215,7 @@ section.content {
     background-color: #B5B5B5; }
   section.content.in-view {
     opacity: 1;
-    transition: opacity 0.7s ease-in-out; }
+    transition: opacity 0.7s ease; }
   section.content h2 {
     text-align: center;
     font-size: 2em; }

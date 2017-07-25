@@ -25,7 +25,7 @@ include_once('phpscripts/mobile_detection.php');
 
 <body>
 	<div class="page">
-		<a id="disrupter" href="#"><span>Klick<br/>mich!</span></a>
+		<a id="disrupter" href="#"><span>Click<br/>me!</span></a>
 		<section class="carousel">
 			<div class="item"><div class="content content-video">
 				<iframe width="800" height="400" src="https://www.youtube.com/embed/gJeh_dLjPN4?autoplay=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>

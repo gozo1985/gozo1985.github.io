@@ -21,16 +21,20 @@ a#disrupter {
 	right: 10%;
 	z-index: 1;
 	width: 100px;
-	height: 100px;
+	height: 80px;
+	@include transition(height 0.25s ease);
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	box-shadow: 0px 0px 10px 5px #CCC;
 	background-color: $disrupter-bg-color;
 	color: #000;
 	font-weight: bold;
+	cursor: pointer;
 
 	&:hover {
 		box-shadow: 0px 0px 10px 10px #EEE;
+		height: 100px;
+		@include transition(height 0.25s ease);
 	}
 
 	span {
@@ -151,7 +155,8 @@ section.content {
 	}
 
 	&.in-view {
-		@include fadeTo(1, 0.7s);
+		opacity: 1;
+		@include transition(opacity 0.7s ease);
 	}
 
 	h2 {

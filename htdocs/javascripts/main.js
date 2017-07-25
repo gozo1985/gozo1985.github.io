@@ -58,7 +58,8 @@ var carousel = {
 			lazyLoad: 		'ondemand',
 			dots: 			true,
 			infinite: 		true,
-			speed: 			300,
+			fade: 			true,
+			speed: 			700,
 			slidesToShow: 	1,
 			adaptiveHeight: true,
 			centerMod: 		true,
@@ -76,7 +77,7 @@ var carousel = {
 carousel.init();
 
 
-var viewportFadeIn = {
+var sectionsFadeIn = {
 	init: function() {
 		var win = $(window);
 		var body = $('body');
@@ -94,7 +95,7 @@ var viewportFadeIn = {
 		body.scroll();
 	}
 };
-viewportFadeIn.init();
+sectionsFadeIn.init();
 
 
 var mainNav = {
