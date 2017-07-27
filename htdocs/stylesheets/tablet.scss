@@ -12,7 +12,10 @@ nav#main {
 
 	ul {
 		li {
-			padding: 5px 10px;
+			a {
+				padding: 10px 12px;
+				font-size: 1.1em;
+			}
 		}
 	}
 }

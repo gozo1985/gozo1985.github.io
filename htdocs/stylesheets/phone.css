@@ -8,9 +8,9 @@ nav#main ul {
   display: none; }
   nav#main ul li {
     width: 100%;
-    text-align: center;
-    padding: 5px 0px; }
+    text-align: center; }
     nav#main ul li a {
+      padding: 10px 0px;
       font-size: 2em; }
 nav#main div.icon {
   display: block;

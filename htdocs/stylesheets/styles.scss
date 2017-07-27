@@ -66,7 +66,7 @@ section.carousel {
 		z-index: 1;
 	}
 	.slick-dots {
-		bottom: 1%;
+		bottom: 1.5%;
 	}
 
 	.item {
@@ -107,20 +107,22 @@ section.carousel {
 }
 
 nav#main {
+	position: relative;
 	background-color: $nav-bg-color;
+	box-shadow: 0px 5px 15px 5px rgba($nav-bg-color, 1);
+	z-index: 1;
 
 	ul {
 		@include flex('center');
 		list-style-type: none;
-		padding: 10px 0;
+		padding: 6px 0px 0px 0px;
 
 		li {
 			display: inline-block;
-			padding: 5px 15px;
 
 			a {
 				display: block;
-				padding: inherit;
+				padding: 10px 18px;
 				color: $nav-font-color;
 				text-decoration: none;
 
@@ -131,7 +133,7 @@ nav#main {
 		}
 	}
 
-	div.icon {
+	div.icon-menu {
 		display: none;
 	}
 
@@ -140,6 +142,29 @@ nav#main {
 		top: 0;
 		width: 100%;
 		z-index: 2;
+	}
+
+	nav#sub {
+		position: absolute;
+		background-color: $nav-bg-color;
+		z-index: 1;
+		padding-bottom: 30px;
+
+		&.hidden {
+			display: none;
+		}
+		&.box-shadow {
+			box-shadow: 0px 5px 15px 5px rgba($nav-bg-color, 1);
+		}
+
+		.icon-circle-up {
+			display: none;
+			position: absolute;
+			@include center();
+			top: calc(100% - 8px);
+			color: $nav-font-color;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -190,15 +215,16 @@ section.video-bg {
 		height: 100%;
 
 		video {
+			position: absolute;
 			width: 100%;
 			height: auto;
 		}
 	}
 
 	.content-wrapper {
-		position: relative;
+		@include center();
+		width: 80%;
 		z-index: 1;
-		padding: 2%;
 	}
 }
 
