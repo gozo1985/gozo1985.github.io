@@ -34,6 +34,23 @@ nav#main {
 	}
 }
 
+section.video-bg {
+	padding: 0;
+
+	.video-wrapper {
+
+		video {
+			min-height: 400px;
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	.content-wrapper {
+		padding: 6%;
+	}
+}
+
 section.contactform {
 
 	form {

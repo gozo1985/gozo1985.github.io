@@ -43,6 +43,7 @@ var responsive = {
 					window.device = 'desktop';
 					body.attr('data-device', 'desktop');
 			}
+			body.scroll();
 		});
 		body.resize();
 	}
@@ -84,6 +85,9 @@ var sectionsFadeIn = {
 
 		$('.page section.content').each(function(index, element){
 			var e = $(element);
+
+			e.addClass('opacity-0');
+
 			win.scroll(function(){
 				if(e.isInViewport()) {
 					e.addClass('in-view');
@@ -141,6 +145,32 @@ var mainNav = {
 }
 mainNav.sticky();
 mainNav.phone();
+
+
+var videoBg = {
+	init: function() {
+		var win = $(window);
+		var videoSection = $('section.video-bg');
+		var videoWrapper =  videoSection.find('.video-wrapper');
+		var video = videoWrapper.find('video');
+
+		video.bind('loadeddata', function(event) {
+  			win.resize(function(){
+				
+				if (window.device !== 'desktop') {
+					videoSection.height(video.css('min-height'));
+					videoMargin = (win.width() - video.outerWidth()) / 2;
+					video.css('margin-left', videoMargin);
+				} else {
+					videoSection.height(video.outerHeight());
+					video.css('margin-left', 0);
+				}
+			});
+			win.resize();
+		});
+	}
+}
+videoBg.init();
 
 
 });

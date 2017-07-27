@@ -7,6 +7,15 @@ section.content {
 nav#main ul li {
   padding: 5px 10px; }
 
+section.video-bg {
+  padding: 0; }
+  section.video-bg .video-wrapper video {
+    min-height: 600px;
+    height: 100%;
+    width: auto; }
+  section.video-bg .content-wrapper {
+    padding: 4%; }
+
 section.contactform form {
   width: 90%; }
   section.contactform form > div {

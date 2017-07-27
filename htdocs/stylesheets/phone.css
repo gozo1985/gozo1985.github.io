@@ -20,6 +20,15 @@ nav#main div.icon {
   padding: 10px 0px;
   cursor: pointer; }
 
+section.video-bg {
+  padding: 0; }
+  section.video-bg .video-wrapper video {
+    min-height: 400px;
+    height: 100%;
+    width: auto; }
+  section.video-bg .content-wrapper {
+    padding: 6%; }
+
 section.contactform form {
   width: 100%; }
 

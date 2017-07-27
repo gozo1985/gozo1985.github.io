@@ -204,11 +204,13 @@ nav#main {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1; }
+    z-index: 2; }
 
 section.content {
   padding: 2%;
-  opacity: 0; }
+  opacity: 1; }
+  section.content.opacity-0 {
+    opacity: 0; }
   section.content:nth-child(even) {
     background-color: #BBB; }
   section.content:nth-child(odd) {
@@ -223,6 +225,24 @@ section.content {
     max-width: 100%;
     display: block;
     margin: 0 auto; }
+
+section.video-bg {
+  position: relative;
+  padding: 0; }
+  section.video-bg .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%; }
+    section.video-bg .video-wrapper video {
+      width: 100%;
+      height: auto; }
+  section.video-bg .content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 2%; }
 
 section.contactform form {
   width: 80%;
