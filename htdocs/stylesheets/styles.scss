@@ -14,34 +14,28 @@ html, body {
 	margin: 0 auto;
 }
 
-a#disrupter {
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 10%;
-	z-index: 1;
+a#logo {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	background-color: $logo-bg-color;
+	border: 1px solid #000;
+	border-radius: 50% 0%;
 	width: 100px;
-	height: 80px;
-	@include transition(height 0.25s ease);
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	box-shadow: 0px 0px 10px 5px #CCC;
-	background-color: $disrupter-bg-color;
+	height: 100px;
+	transition: transform 2s ease-in-out;
+	text-decoration: none;
 	color: #000;
-	font-weight: bold;
-	cursor: pointer;
+	font-size: 1.5em;
+	z-index: 3;
 
 	&:hover {
-		box-shadow: 0px 0px 10px 10px #EEE;
-		height: 100px;
-		@include transition(height 0.25s ease);
+		transform: rotate(720deg);
 	}
 
 	span {
-		@include center;
-		width: 50%;
-		height: 50%;
-		text-align: center;
+		@include centerXY();
+		color: $brand-color;
 	}
 }
 
@@ -81,7 +75,7 @@ section.carousel {
 		}
 			
 		.content-text {
-			@include center;
+			@include centerXY();
 			width: 80%;
 		}
 		.content-video {
@@ -112,7 +106,7 @@ nav#main {
 	box-shadow: 0px 5px 15px 5px rgba($nav-bg-color, 1);
 	z-index: 1;
 
-	ul {
+	> ul {
 		@include flex('center');
 		list-style-type: none;
 		padding: 6px 0px 0px 0px;
@@ -128,6 +122,10 @@ nav#main {
 
 				&:hover {
 					text-decoration: underline;
+				}
+
+				&.active {
+					color: $brand-color;
 				}
 			}
 		}
@@ -146,9 +144,11 @@ nav#main {
 
 	nav#sub {
 		position: absolute;
+		width: 100%;
 		background-color: $nav-bg-color;
 		z-index: 1;
-		padding-bottom: 30px;
+		padding: 50px 0px 80px 0px;
+		overflow: hidden;
 
 		&.hidden {
 			display: none;
@@ -157,11 +157,50 @@ nav#main {
 			box-shadow: 0px 5px 15px 5px rgba($nav-bg-color, 1);
 		}
 
+		.subs-headline {
+			float: left;
+			width: 10%;
+			margin: 0% 5% 0% 5%;
+			
+			span {
+				font-size: 2em;
+				color: $nav-font-color;
+			}
+		}
+
+		.subs-wrapper {
+			width: 80%;
+			float: right;
+			margin: 0 auto;
+			overflow: hidden;
+
+			&.hidden {
+				display: none;
+			}
+
+			> ul {
+				float: left;
+				width: 30%;
+				list-style-type: none;
+				border-left: 1px solid $brand-color;
+				padding-left: 1%;
+
+				li {
+					display: block;
+
+					a {
+						color: $nav-font-color;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
 		.icon-circle-up {
 			display: none;
 			position: absolute;
-			@include center();
-			top: calc(100% - 8px);
+			right: 20px;
+			top: calc(100% - 30px);
 			color: $nav-font-color;
 			cursor: pointer;
 		}
@@ -185,15 +224,20 @@ section.content {
 
 	&.in-view {
 		opacity: 1;
-		@include transition(opacity 0.7s ease);
+		transition: opacity 1s ease-in-out;
 	}
 
 	h2 {
 		text-align: center;
 		font-size: 2em;
+		color: $brand-color;
 	}
 
 	p {}
+
+	a {
+		color: $brand-color;
+	}
 
 	picture img {
 		max-width: 100%;
@@ -222,9 +266,10 @@ section.video-bg {
 	}
 
 	.content-wrapper {
-		@include center();
+		@include centerXY();
 		width: 80%;
 		z-index: 1;
+		@include font-outline(1px, #FFF, 1px);
 	}
 }
 
@@ -245,7 +290,7 @@ section.contactform {
 		}
 
 		input {
-			@include center();
+			@include centerXY();
 			width: 55%;
 
 			&[type="submit"] {
@@ -256,7 +301,7 @@ section.contactform {
 		}
 
 		.pretty-checkbox-wrapper {
-			@include center();
+			@include centerXY();
 			width: 56.5%;
 		}
 

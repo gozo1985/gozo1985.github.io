@@ -4,6 +4,12 @@ body {
 	font: $tablet-font;
 }
 
+a#logo {
+	width: 60px;
+	height: 60px;
+	font-size: 1em;
+}
+
 section.content {
 	padding: 4%;
 }
@@ -24,6 +30,7 @@ section.video-bg {
 	padding: 0;
 
 	.video-wrapper {
+		overflow: hidden;
 
 		video {
 			min-height: 600px;

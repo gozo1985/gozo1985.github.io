@@ -1,6 +1,11 @@
 body {
   font: 0.8em/1.4 Verdana; }
 
+a#logo {
+  width: 60px;
+  height: 60px;
+  font-size: 1em; }
+
 section.content {
   padding: 4%; }
 
@@ -10,10 +15,12 @@ nav#main ul li a {
 
 section.video-bg {
   padding: 0; }
-  section.video-bg .video-wrapper video {
-    min-height: 600px;
-    height: 100%;
-    width: auto; }
+  section.video-bg .video-wrapper {
+    overflow: hidden; }
+    section.video-bg .video-wrapper video {
+      min-height: 600px;
+      height: 100%;
+      width: auto; }
   section.video-bg .content-wrapper {
     padding: 4%; }
 

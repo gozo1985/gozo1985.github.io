@@ -5,6 +5,7 @@ form {
 		&[type="text"], &[type="email"], &[type="password"] {
 			padding: 10px;
 			border: 2px solid $input-border-color;
+			border-radius: 10px;
 			background-color: $input-bg-color;
 			color: $input-font-color;
 			font-size: 1.3em;
@@ -12,6 +13,7 @@ form {
 
 		&[type="submit"] {
 			border: 2px solid #000;
+			border-radius: 10px;
 			background-color: $button-bg-color;
 			color: $button-font-color;
 			padding: 10px;

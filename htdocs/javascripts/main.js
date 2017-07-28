@@ -81,12 +81,12 @@ var carousel = {
 carousel.init();
 
 
-// Sections fade in/out when in viewport. Comment out init function call to remove effect. (selector: 'section.content')
+// Sections fade when in viewport. Comment out init function call to remove effect. (selector: 'section.content')
 var sectionsFadeIn = {
 	init: function() {
 		var win = $(window);
 
-		$('.page section.content').each(function(index, element){
+		$('#page section.content').each(function(index, element){
 			var e = $(element);
 
 			e.addClass('opacity-0');
@@ -149,12 +149,15 @@ var mainNav = {
 	},
 
 	subnav: () => {
-		var subnav = mainNav.nav.find('#sub');
+		var subnav = mainNav.nav.find('nav#sub');
+		var subnavLinksWrapper = subnav.find('.subs-wrapper');
+		var subnavHeadline = subnav.find('.subs-headline span');
 		var mainNavLinks = mainNav.nav.find('a');
-		var subnavSlideDuaration = 300;
 		var iconUp = subnav.find('.icon-circle-up');
+		window.subnavSlideDuaration = 300;
 
 		subnav.addClass('hidden');
+		subnavLinksWrapper.addClass('hidden');
 
 		mainNavLinks.each(function(index, element){
 			var e = $(element);
@@ -162,7 +165,13 @@ var mainNav = {
 			e.on('click.subnav', function(event){
 				event.preventDefault();
 
-				subnav.slideDown(subnavSlideDuaration, function(){
+				mainNavLinks.removeClass('active');
+				e.addClass('active');
+				subnavLinksWrapper.addClass('hidden');
+				subnavLinksWrapper.eq(index).removeClass('hidden');
+				subnavHeadline.text(mainNavLinks.eq(index).text());
+
+				subnav.slideDown(window.subnavSlideDuaration, function(){
 					subnav.removeClass('hidden').addClass('box-shadow');
 					iconUp.show();
 				});
@@ -172,6 +181,7 @@ var mainNav = {
 		iconUp.on('click.close', function(event){
 			
 			iconUp.hide();
+			mainNavLinks.removeClass('active');
 			
 			subnav.slideUp(subnavSlideDuaration, function(){
 				subnav.addClass('hidden').removeClass('box-shadow');
